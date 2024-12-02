@@ -157,6 +157,7 @@ public class Ficheiros {
             }
 
             Fatura f = new Fatura(fatura[0], cliente, fatura[2], listaProdutos);
+            f.calcularValoresIVA();
             dados.adicionarFatura(f);
         }
     }
