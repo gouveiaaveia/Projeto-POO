@@ -230,37 +230,37 @@ public class Gui {
         frame.setTitle("Lista de Faturas");
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    
+
         // Criando o painel principal com BoxLayout para colocar os itens verticalmente
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-    
+
         // Cabeçalho
         JPanel headerPanel = new JPanel();
         headerPanel.setLayout(new GridLayout(1, 1));  // Uma única coluna
         headerPanel.add(new JLabel("Informações das Faturas"));
         panel.add(headerPanel);
-    
+
         // Listando as faturas
         for (Fatura fatura : dados.getFaturas()) {
             // Cria um painel para exibir cada fatura
             JPanel faturaPanel = new JPanel();
             faturaPanel.setLayout(new BorderLayout());
-    
+
             // Adicionando as informações da fatura com base no método toString
             JTextArea faturaInfo = new JTextArea(fatura.toString());
-            faturaInfo.setEditable(false); 
+            faturaInfo.setEditable(false);
             faturaInfo.setWrapStyleWord(true);
             faturaInfo.setLineWrap(true);
-            faturaPanel.add(new JScrollPane(faturaInfo), BorderLayout.CENTER); 
-    
+            faturaPanel.add(new JScrollPane(faturaInfo), BorderLayout.CENTER);
+
             panel.add(faturaPanel);
         }
-    
+
         // Adicionando o painel principal com todos os itens
         JScrollPane scrollPane = new JScrollPane(panel);
         frame.add(scrollPane);
-    
+
         // Tornando o frame visível
         frame.setVisible(true);
     }
@@ -312,5 +312,5 @@ public class Gui {
             }
         });
     }
-    
+
 }

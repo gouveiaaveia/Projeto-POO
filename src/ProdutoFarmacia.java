@@ -10,25 +10,6 @@ public class ProdutoFarmacia extends Produtos implements Serializable{
         this.categoria=categoria;
     }
 
-    public ProdutoFarmacia(){
-        super();
-        this.categoria="";
-    }
-
-    public void criarNaoPrescrito(boolean verifica, String codigo, Scanner sc, Verificacoes v){
-        super.criarProdutosComum(verifica,codigo, sc, v);
-        setCategoria(Categoria(sc, v));
-    }
-
-    private String Categoria(Scanner sc, Verificacoes v){
-        String categoria;
-
-        do{
-            System.out.print("\nCategoria (Beleza,BemEstar,Bebes,Animais,Outros):");
-            categoria=sc.nextLine();
-        }while(!v.verificaCategoria(categoria));
-        return categoria;
-    }
 
     public String toString(){
         String str="";
@@ -70,6 +51,4 @@ public class ProdutoFarmacia extends Produtos implements Serializable{
     public double valorTotalComIVA(String localizacao){
         return getQuantidade() * valorComIVA(localizacao);
     }
-
-
 }

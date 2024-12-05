@@ -10,11 +10,6 @@ public class ProdutoAlimentarBiologico extends ProdutoAlimentar implements Seria
         this.biologico = true;
     }
 
-    public ProdutoAlimentarBiologico(){
-        super();
-        this.biologico = true;
-    }
-
 
     @Override
     public double valorComIVA(String localizacao){
